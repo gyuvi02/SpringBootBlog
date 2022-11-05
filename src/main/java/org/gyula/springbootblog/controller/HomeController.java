@@ -20,6 +20,7 @@ public class HomeController {
         this.storyService = storyService;
     }
 
+    // This is for testing branches
     @RequestMapping("/")
     public String stories(Model model) {
         model.addAttribute("pageTitle", "Just a story...");
