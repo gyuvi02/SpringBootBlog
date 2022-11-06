@@ -1,5 +1,6 @@
 package org.gyula.springbootblog.controller;
 
+import org.gyula.springbootblog.domain.Blogger;
 import org.gyula.springbootblog.service.StoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -47,6 +48,13 @@ public class HomeController {
         model.addAttribute("pageTitle", "What a Spring Boot!");
         model.addAttribute("story", storyService.getStory());
         return "story";
+    }
+
+    @RequestMapping("/{bloggerName}")
+    public String blogger(@PathVariable(value = "bloggerName") String bloggerName, Model model) {
+        model.addAttribute("pageTitle", "Just a story...");
+        model.addAttribute("stories", storyService.getByBlogger(bloggerName));
+        return "stories";
     }
 
 }

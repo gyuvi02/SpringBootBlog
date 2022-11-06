@@ -37,17 +37,21 @@ public class StoryService {
         return storyRepo.findFirstByOrderByPostedDesc();
     }
 
+    public List<Story> getByBlogger(String bloggerName) {
+        return storyRepo.findByBlogger(bloggerRepo.findByName(bloggerName));
+    }
+
     public Story getSpecificStory(String title) {
         return storyRepo.findByTitle(title);
     }
 
-	@PostConstruct
-	public void init(){
-		Blogger blogger = new Blogger("BelsőGyula", 25);
-        System.out.println(blogger.getName());
-		bloggerRepo.save(blogger);
-
+//	@PostConstruct
+//	public void init(){
+//		Blogger blogger = new Blogger("BelsőGyula", 25);
+//        System.out.println(blogger.getName());
+//		bloggerRepo.save(blogger);
+//
 //		Story story = new Story("Belső cím","Belső tartalom", new Date(), blogger);
 //		storyRepo.save(story);
-	}
+//	}
 }
