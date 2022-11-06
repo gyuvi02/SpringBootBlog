@@ -39,14 +39,14 @@ public class HomeController {
     @ExceptionHandler(Exception.class)
     public String exceptionHandler(HttpServletRequest rA, Exception ex, Model model) {
         model.addAttribute("errMessage", ex.getMessage());
-        return "exceptionHandler";
+        return "error";
     }
 
-//    @RequestMapping("/story")
-//    public String story(Model model) {
-//        model.addAttribute("pageTitle", "Minden napra egy SFJ sztori!");
-//        model.addAttribute("story", storyService.getStory());
-//        return "story";
-//    }
+    @RequestMapping("/story")
+    public String story(Model model) {
+        model.addAttribute("pageTitle", "What a Spring Boot!");
+        model.addAttribute("story", storyService.getStory());
+        return "story";
+    }
 
 }

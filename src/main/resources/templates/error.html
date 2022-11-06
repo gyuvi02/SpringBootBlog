@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-    <title th:text="${pageTitle}">Napi SFJ</title>
+    <title th:text="${pageTitle}">The test page</title>
 
     <link rel="stylesheet" th:href="@{css/main.css}" href="../static/css/main.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
@@ -35,10 +35,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">napiSFJ.com</a>
+                <a class="navbar-brand" href="#">Ez a blog cime</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-5">
-                <p class="navbar-text navbar-right" th:text="#{yourip}">IP címed: <a href="#" class="navbar-link">127.0.0.1</a>
+                <p class="navbar-text navbar-right" th:text="#{yourip}">Your IP: <a href="#" class="navbar-link">127.0.0.1</a>
                 </p>
             </div>
         </div>
@@ -47,18 +47,18 @@
 
     <article>
         <header>
-            <h1 th:text="${error}">Ez itt a gond</h1>
+            <h1 th:text="${error}">That is the problem</h1>
         </header>
 
         <section>
-            <p th:text="${message}">Ez az üzenet.</p>
+            <p th:text="${message}">That is the message</p>
         </section>
 
 
     </article>
 
     <footer>
-        <p th:text="#{footerText}">Készült az San Franciscoból Jöttem csapata megbízásából</p>
+        <p th:text="#{footerText}">This is a test page to learn Spring Boot</p>
     </footer>
 
 </div>

@@ -16,7 +16,6 @@ import org.gyula.springbootblog.repository.StoryRepository;
 
 @Service
 public class StoryService {
-
     private StoryRepository storyRepo;
     private BloggerRepository bloggerRepo;
 
@@ -42,14 +41,13 @@ public class StoryService {
         return storyRepo.findByTitle(title);
     }
 
-//	@PostConstruct
-//	public void init(){
-//		Blogger blogger = new Blogger("BelsőGyula", 25);
-//		bloggerRepo.save(blogger);
-//
+	@PostConstruct
+	public void init(){
+		Blogger blogger = new Blogger("BelsőGyula", 25);
+        System.out.println(blogger.getName());
+		bloggerRepo.save(blogger);
+
 //		Story story = new Story("Belső cím","Belső tartalom", new Date(), blogger);
 //		storyRepo.save(story);
-//	}
-//
-
+	}
 }

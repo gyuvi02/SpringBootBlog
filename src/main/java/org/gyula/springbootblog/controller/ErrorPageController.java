@@ -47,7 +47,7 @@ public class ErrorPageController implements ErrorController {
 
     	@RequestMapping(ERR_PATH)
 	public String notFound(Model model, HttpServletRequest request) {
-		return "404";
+		return "detailedError";
 	}
 //
 //

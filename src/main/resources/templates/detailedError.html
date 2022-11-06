@@ -7,8 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title th:text="${pageTitle}">Gyula blog</title>
-<!--  <title>Gyula blog</title>-->
+  <title th:text="${pageTitle}">Napi SFJ</title>
 
   <link rel="stylesheet" th:href="@{css/main.css}" href="../static/css/main.css"/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
@@ -43,29 +42,24 @@
   </nav>
 
 
-  <article th:each="story : ${stories}">
+  <article>
     <header>
-      <h1 th:text="${story.title}">The title comes here</h1>
-      <p th:text="${#dates.format(story.posted, 'yyyy.MM.dd HH:mm')}">The date comes here</p>
+      <h1 th:text="${error}">That is the problem</h1>
     </header>
 
-    <section th:utext="${story.content}">
-      <p>C</p>
-      <p></p>
-      <p></p>
+    <section >
+      <p th:text="${message}">The message will be here</p>
+      <p th:text="${path}">The path</p>
+      <p th:text="${status}">Status code</p>
+      <p th:text="${timestamp}">Date</p>
     </section>
 
-    <footer>
-      <address>
-        Sent by: <span th:text="${story.blogger.name}">Blogger name</span>
-      </address>
-    </footer>
-    <hr/>
+
+
   </article>
 
   <footer>
     <p th:text="#{footerText}">This is a test page to learn Spring Boot</p>
-<!--    <p>(c) org.gyula)</p>-->
   </footer>
 
 </div>
