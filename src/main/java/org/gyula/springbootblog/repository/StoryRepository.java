@@ -2,6 +2,7 @@ package org.gyula.springbootblog.repository;
 
 import java.util.List;
 
+import org.gyula.springbootblog.domain.Blogger;
 import org.gyula.springbootblog.domain.Story;
 import org.springframework.data.repository.CrudRepository;
 
@@ -16,5 +17,7 @@ public interface StoryRepository extends CrudRepository<Story, Long> {
     Story findFirstByOrderByPostedDesc();
 
     Story findByTitle(String title);
+
+    List<Story> findByBlogger(Blogger blogger);
 
 }

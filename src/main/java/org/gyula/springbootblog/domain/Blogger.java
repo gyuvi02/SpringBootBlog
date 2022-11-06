@@ -13,11 +13,10 @@ public class Blogger {
     private Long id;
     private String name;
     private int age;
-    @OneToMany(mappedBy = "blogger")
+    @OneToMany(mappedBy = "blogger", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Story> stories;
 
     public Blogger(){
-
     }
 
     public Blogger(String name, int age){
