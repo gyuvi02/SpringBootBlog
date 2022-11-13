@@ -38,7 +38,7 @@ public class StoryService {
     }
 
     public List<Story> getByBlogger(String bloggerName) {
-        return storyRepo.findByBlogger(bloggerRepo.findByName(bloggerName));
+        return storyRepo.findAllByBloggerNameIgnoreCaseOrderByPosted(bloggerName);
     }
 
     public Story getSpecificStory(String title) {
@@ -55,3 +55,4 @@ public class StoryService {
 //		storyRepo.save(story);
 //	}
 }
+

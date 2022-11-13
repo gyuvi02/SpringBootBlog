@@ -1,5 +1,7 @@
 package org.gyula.springbootblog.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +15,7 @@ public class Blogger {
     private Long id;
     private String name;
     private int age;
+    @JsonBackReference
     @OneToMany(mappedBy = "blogger", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Story> stories;
 
