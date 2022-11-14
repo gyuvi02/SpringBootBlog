@@ -38,6 +38,8 @@ public class SecurityConf{
         httpSec
                 .authorizeRequests()
                 .antMatchers(HttpMethod.GET,"/").permitAll() //a GET megadasa nem kotelezo
+                .antMatchers("/registration").permitAll()
+                .antMatchers("/reg").permitAll()
                 .antMatchers("/delete").hasRole("ADMIN")
                 .antMatchers("/stories/**").hasRole("ADMIN")
                 .and()
