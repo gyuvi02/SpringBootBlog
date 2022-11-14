@@ -6,11 +6,10 @@ import org.gyula.springbootblog.domain.Blogger;
 import org.springframework.data.repository.CrudRepository;
 
 import org.gyula.springbootblog.domain.Blogger;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface BloggerRepository extends CrudRepository<Blogger, Long> {
     List<Blogger> findAll();
-
-    Blogger findByName(String name);
-
 
 }
