@@ -11,7 +11,7 @@
 
     <form name="registration" th:action="@{/reg}" th:object="${user}" method="post" class="form-signin">
         <h2 class="form-signin-heading">Kérlek regisztrálj</h2>
-        <input type="text" id="username" name="username" th:field="*{user.username}" class="form-control" placeholder="Felhasználói név"  />
+        <input type="text" id="username" name="username" th:field="*{user.email}" class="form-control" placeholder="Felhasználói név"  />
         <input type="password" id="password" name="password" th:field="*{user.password}"  class="form-control" placeholder="Jelszó" />
         <button class="btn btn-lg btn-primary btn-block" type="submit">Regisztráció</button>
     </form>
